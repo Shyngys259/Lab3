@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Habits | Digital Well-being</title><link rel="stylesheet" href="style.css"></head><body><header><div class="wrap nav"><a class="brand" href="index.html"><span class="dot"></span> Digital Well-being</a><nav><ul><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="screen-time.html">Screen Time</a></li><li><a href="sleep.html">Sleep</a></li><li><a href="social-media.html">Social Media</a></li><li><a href="focus.html">Focus</a></li><li><a href="habits.html" aria-current="page">Habits</a></li><li><a href="coach.html">AI Coach</a></li><li><a href="login.html">Login</a></li><li><a href="registration.html">Register</a></li></ul></nav></div></header><section id="habits" class="print-page">
+  <div class="wrap">
+    <span class="page-tag">Healthy Habits & Digital Detox</span>
+    <h2>Healthy Digital Habits</h2>
+    <p class="lead">Three habits do most of the work. Everything else in this guide supports them.</p>
+
+    <div class="grid three" style="margin-top:30px;">
+      <div class="habit">
+        <div class="icon">1</div>
+        <h4>Take Breaks</h4>
+        <p>Stand up, walk around and rest your eyes.</p>
+      </div>
+      <div class="habit">
+        <div class="icon">2</div>
+        <h4>Protect Your Focus</h4>
+        <p>Put your phone away during important study or work sessions.</p>
+      </div>
+      <div class="habit">
+        <div class="icon">3</div>
+        <h4>Spend Offline Time</h4>
+        <p>Read books, exercise, meet friends or enjoy outdoor activities.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:44px;">A Day That Holds Together</h3>
+    <table>
+      <thead>
+        <tr><th class="num">Time</th><th>Habit</th><th>Why it works</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">07:00</td><td>No phone for the first 30 minutes</td><td>Starts the day on your own priorities, not the inbox's.</td></tr>
+        <tr><td class="num">09:00</td><td>Two focus blocks before noon</td><td>Attention is at its best earlier; spend it on hard work.</td></tr>
+        <tr><td class="num">13:00</td><td>Screen-free lunch</td><td>Gives your eyes and your thinking a genuine pause.</td></tr>
+        <tr><td class="num">18:00</td><td>Movement or outdoors</td><td>Replaces the evening scroll with something that gives energy back.</td></tr>
+        <tr><td class="num">21:30</td><td>Screens off, wind-down begins</td><td>Lets sleep arrive on schedule rather than on demand.</td></tr>
+        <tr><td class="num">22:30</td><td>Phone charges outside the bedroom</td><td>Removes the last temptation and the midnight interruption.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:44px;">Digital Detox &amp; Reset</h3>
+    <p>Sometimes the habits have slipped far enough that tinkering is not enough, and a short deliberate break is the faster route back. A reset is not about proving you can live without your phone. It is about remembering what the unoccupied hours feel like, so you can choose what to put back in them.</p>
+
+    <div class="grid two" style="margin-top:22px;">
+      <div class="card">
+        <h4>A 24-Hour Reset</h4>
+        <ul class="ticks" style="margin-bottom:0;">
+          <li>Tell people you will be slow to reply.</li>
+          <li>Pick the day in advance — a weekend works better.</li>
+          <li>Plan two things to do instead, in writing.</li>
+          <li>Keep calls available; remove the feed.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>A 7-Day Reset</h4>
+        <ul class="ticks" style="margin-bottom:0;">
+          <li>Delete the three heaviest apps from your phone.</li>
+          <li>Use them only in a browser, at a desk, once a day.</li>
+          <li>Keep a note of what you missed and what you did not.</li>
+          <li>Reinstall on day eight only what earned its place.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Expect the first day to feel bad</strong>
+      <p>Restlessness, phantom vibrations and an urge to reach for a pocket that is empty are normal and they pass. What usually arrives on day two is the thing worth having: a long, quiet stretch of time that is entirely yours.</p>
+    </div>
+  </div>
+</section>
+  
+
+
+<div class="tracker card" id="habit-tracker">
+    <h3>My Healthy Habits Tracker</h3>
+    <p>Add your habits and track your daily progress.</p>
+
+    <form id="habit-form">
+        <input type="hidden" id="habit-id">
+
+        <label for="habit-name">Habit name</label>
+        <input
+            type="text"
+            id="habit-name"
+            placeholder="Example: Take a screen break"
+            required
+            maxlength="80"
+        >
+
+        <label for="habit-category">Category</label>
+        <select id="habit-category" required>
+            <option value="Focus">Focus</option>
+            <option value="Sleep">Sleep</option>
+            <option value="Exercise">Exercise</option>
+            <option value="Digital Detox">Digital Detox</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="habit-minutes">Minutes per day</label>
+        <input
+            type="number"
+            id="habit-minutes"
+            min="1"
+            max="1440"
+            placeholder="30"
+            required
+        >
+
+        <button type="submit" id="habit-submit">Add Habit</button>
+        <button type="button" id="habit-cancel" hidden>Cancel Edit</button>
+    </form>
+
+    <p id="habit-message" role="status" aria-live="polite"></p>
+
+    <div class="tracker-tools">
+        <input
+            type="search"
+            id="habit-search"
+            placeholder="Search habits..."
+            aria-label="Search habits"
+        >
+
+        <select id="habit-filter" aria-label="Filter habits">
+            <option value="All">All habits</option>
+            <option value="Pending">Not completed</option>
+            <option value="Completed">Completed</option>
+        </select>
+    </div>
+
+    <div class="habit-stats">
+        <p>Total: <strong id="habit-total">0</strong></p>
+        <p>Completed: <strong id="habit-completed">0</strong></p>
+        <p>Minutes per day: <strong id="habit-total-minutes">0</strong></p>
+    </div>
+
+    <div id="habit-list"></div>
+    <p id="habit-empty">No habits yet. Add your first habit above!</p>
+</div>
+
+<footer><div class="wrap"><div class="foot-grid"><div><div class="brand" style="color:#fff;margin-bottom:14px;"><span class="dot"></span> Digital Well-being</div><p style="color:#8fa1bd;font-size:15.5px;margin:0;">A practical guide to using technology in a healthier, smarter and more balanced way.</p></div><div><h4>Topics</h4><ul><li><a href="screen-time.html">Screen Time</a></li><li><a href="sleep.html">Sleep and Technology</a></li><li><a href="social-media.html">Social Media</a></li><li><a href="focus.html">Focus and Attention</a></li></ul></div><div><h4>Practice</h4><ul><li><a href="habits.html">Healthy Habits</a></li><li><a href="habits.html#detox">Digital Detox</a></li><li><a href="coach.html">AI Coach &amp; FAQ</a></li></ul></div></div></div></footer>
+<script src="habits.js"></script>
+</body></html>

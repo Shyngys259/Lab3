@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI Coach | Digital Well-being</title><link rel="stylesheet" href="style.css"></head><body><header><div class="wrap nav"><a class="brand" href="index.html"><span class="dot"></span> Digital Well-being</a><nav><ul><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="screen-time.html">Screen Time</a></li><li><a href="sleep.html">Sleep</a></li><li><a href="social-media.html">Social Media</a></li><li><a href="focus.html">Focus</a></li><li><a href="habits.html">Habits</a></li><li><a href="coach.html" aria-current="page">AI Coach</a></li><li><a href="login.html">Login</a></li><li><a href="registration.html">Register</a></li></ul></nav></div></header><section id="coach" class="print-page">
+  <div class="wrap">
+    <span class="page-tag">Tools & Answers</span>
+    <h2>AI Digital Well-being Coach</h2>
+    <p class="lead">Our planned AI coach can provide simple suggestions based on your digital habits.</p>
+
+    <div class="coach" style="margin-top:30px;">
+      <form id="coach-form" onsubmit="return false;">
+        <div class="field">
+          <label for="time">Daily Screen Time</label>
+          <div class="options" id="time">
+            <label><input type="radio" name="time" value="Less than 2 hours" checked> Less than 2 hours</label>
+            <label><input type="radio" name="time" value="2-4 hours"> 2–4 hours</label>
+            <label><input type="radio" name="time" value="4-6 hours"> 4–6 hours</label>
+            <label><input type="radio" name="time" value="More than 6 hours"> More than 6 hours</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="problem">Main Problem</label>
+          <div class="options" id="problem">
+            <label><input type="radio" name="problem" value="Screen Time" checked> Screen Time</label>
+            <label><input type="radio" name="problem" value="Sleep"> Sleep</label>
+            <label><input type="radio" name="problem" value="Social Media"> Social Media</label>
+            <label><input type="radio" name="problem" value="Focus"> Focus</label>
+          </div>
+        </div>
+
+        <button class="btn" onclick="getAdvice()">Get Advice</button>
+      </form>
+
+      <div class="result" id="result">
+        <h4>Example AI Result</h4>
+        <p id="advice">Try taking regular screen breaks and create a device-free period before sleep.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:52px;" id="faq">Frequently Asked Questions</h3>
+    <details open>
+      <summary>How much screen time is actually too much?</summary>
+      <p>There is no universal number. The useful test is displacement: if your screen time is eating into sleep, movement, study or time with people you care about, it is too much for you at this stage of your life. Start by measuring a normal week, then set a target slightly below it — not at zero.</p>
+    </details>
+    <details>
+      <summary>Do I need to delete social media completely?</summary>
+      <p>Usually not. Most people get further with a structured middle ground: keep the apps that genuinely add something, remove or restrict the ones that reliably leave you feeling worse, and give yourself defined windows rather than unrestricted access. A month-long break is a useful experiment if you want to find out what you would actually miss.</p>
+    </details>
+    <details>
+      <summary>My phone is my alarm — do I have to move it?</summary>
+      <p>A cheap standalone alarm clock solves this in one purchase and removes the most common excuse for keeping a phone within reach overnight. If that is not an option, put the phone on the far side of the room, face down, on silent, with the charging cable short enough that you have to get out of bed to reach it.</p>
+    </details>
+    <details>
+      <summary>How long does it take for new habits to stick?</summary>
+      <p>Longer than the popular figure suggests, and it varies by habit and person. Expect the first week to be uncomfortable, the second to be easier, and a lapse somewhere in the first month. A lapse is not a failure of the plan; it is part of it. What matters is restarting the next morning rather than writing off the month.</p>
+    </details>
+    <details>
+      <summary>When should I get professional help instead?</summary>
+      <p>If your technology use is causing real harm — lost work or study, broken relationships, or a mood that stays low — talk to a doctor, a counsellor or a mental-health service. Persistent insomnia and symptoms of anxiety or depression deserve professional attention, and habit advice is not a substitute for it.</p>
+    </details>
+
+    <h3 style="margin-top:44px;">Where to Get Help</h3>
+    <p>If what you are dealing with goes beyond screen habits, these are the people to talk to: your family doctor or GP, a school or university counsellor, and your local mental-health service or crisis line. In an emergency, contact your local emergency number straight away.</p>
+  </div>
+</section><footer><div class="wrap"><div class="foot-grid"><div><div class="brand" style="color:#fff;margin-bottom:14px;"><span class="dot"></span> Digital Well-being</div><p style="color:#8fa1bd;font-size:15.5px;margin:0;">A practical guide to using technology in a healthier, smarter and more balanced way.</p></div><div><h4>Topics</h4><ul><li><a href="screen-time.html">Screen Time</a></li><li><a href="sleep.html">Sleep and Technology</a></li><li><a href="social-media.html">Social Media</a></li><li><a href="focus.html">Focus and Attention</a></li></ul></div><div><h4>Practice</h4><ul><li><a href="habits.html">Healthy Habits</a></li><li><a href="habits.html#detox">Digital Detox</a></li><li><a href="coach.html">AI Coach &amp; FAQ</a></li></ul></div></div></div></footer><script>
+  const ADVICE = {
+    "Screen Time|Less than 2 hours": "Your screen time is already low. Spend the next month protecting it: keep notifications off by default and set one screen-free hour a day so the habit holds when your routine changes.",
+    "Screen Time|2-4 hours": "Create one screen-free block of 90 minutes a day, ideally in the evening, and keep your phone out of reach during it. Turn off everything but calls and messages. In three weeks the daily average usually drops by an hour without any feeling of sacrifice.",
+    "Screen Time|4-6 hours": "Start with the two heaviest apps and cap them at 30 minutes each per day, enforced by a system limit rather than willpower. Move the phone out of the bedroom at night. Expect the first week to feel noticeable and the second to feel normal.",
+    "Screen Time|More than 6 hours": "Pick a single weekly target slightly below your current average and log your time every evening. Remove the three heaviest apps from the home screen and log in only from a browser, once a day. Before cutting anything, decide what will fill the time — an empty slot is what gets refilled by scrolling.",
+
+    "Sleep|Less than 2 hours": "Your daytime load is moderate, so sleep is mainly about timing. Get bright light in the morning, dim the room in the evening, and keep a consistent bedtime — even on weekends. A fixed wake-up time does more for sleep quality than an early bedtime.",
+    "Sleep|2-4 hours": "Charge your phone outside the bedroom and stop screens 60 minutes before bed. Replace that hour with something slow and repeatable: reading, stretching, a shower. Keep a regular sleep schedule, and if you are awake for more than 20 minutes, get up and read in dim light rather than scrolling in bed.",
+    "Sleep|4-6 hours": "Your screen load is high enough to be pushing sleep later. Set a hard screen curfew 90 minutes before bed and put the device on charge in another room. Turn off non-essential notifications overnight. If your schedule allows, add 20 minutes to your sleep window each week.",
+    "Sleep|More than 6 hours": "This level of use almost always shortens sleep and pushes bedtime later. Treat sleep as the anchor: fix your wake-up time, then work backwards. No screens for 90 minutes before bed, phone charging outside the bedroom, and no feeds in bed at all. If sleep stays difficult after two or three weeks of a clean routine, speak to a doctor.",
+
+    "Social Media|Less than 2 hours": "Your use is light and probably sustainable. Keep it that way: audit your following list once a month, mute accounts that leave you comparing, and keep one genuine offline meeting in the calendar every week.",
+    "Social Media|2-4 hours": "Aim at the endless scroll rather than the apps. Set a 20-minute daily window for feeds, opened deliberately instead of reflexively, and add two accounts a week that teach or cheer you up. Unfollow or mute one account every month that reliably leaves you feeling worse.",
+    "Social Media|4-6 hours": "Move the feed off your phone: use social media only in a browser, at a desk, once a day. Remove the apps from the home screen and turn off all their notifications. Follow useful and positive content deliberately, and plan one recurring offline activity with people you actually know.",
+    "Social Media|More than 6 hours": "This is a strong sign the feed has become the default activity. Run a 7-day reset: delete the heaviest apps, use each only once a day in a browser, and keep a written note of what you missed and what you did not. Reinstall on day eight only what earned its place. If the app is tied to your mood in a way you cannot adjust, that is worth raising with a counsellor.",
+
+    "Focus|Less than 2 hours": "Keep your setup clean: one tab, one task, phone in another room during work blocks. Twenty-five minute blocks with five-minute breaks suit most people. Write tomorrow's first task before you finish today.",
+    "Focus|2-4 hours": "Protect two 25-minute blocks in your best hours, with the phone in another room rather than face down on the desk. Silence everything except calls and messages. Close background tabs and keep a single note for stray thoughts instead of chasing them immediately.",
+    "Focus|4-6 hours": "Switching is likely costing you more than distraction. Work in defined blocks with a written task for each, and leave the phone in another room — not in a pocket. Batch messages into two or three check-ins a day rather than answering each notification as it lands.",
+    "Focus|More than 6 hours": "Your attention is being shared across many things at once. Start with one protected hour a day: phone in another room, one task, timer on. Build up to four blocks. Turn off every non-human notification and end each day by writing down where you stopped, so tomorrow has a starting point."
+  };
+
+  function getAdvice(){
+    const t = document.querySelector('input[name="time"]:checked').value;
+    const p = document.querySelector('input[name="problem"]:checked').value;
+    const key = p + "|" + t;
+    document.getElementById('advice').textContent =
+      ADVICE[key] || "Try taking regular screen breaks and create a device-free period before sleep.";
+    document.getElementById('result').scrollIntoView({behavior:'smooth', block:'center'});
+  }
+</script></body></html>

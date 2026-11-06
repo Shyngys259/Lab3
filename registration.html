@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create account | Digital Well-being</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="auth.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="auth-topbar"><div class="auth-topbar-inner">
+    <a class="brand" href="index.html" style="text-decoration:none"><span class="dot"></span> Digital Well-being</a>
+    <nav class="auth-nav"><a href="login.html">Login</a><a class="active" href="registration.html">Registration</a><a href="index.html">Home</a></nav>
+  </div></header>
+  <main class="auth-main">
+    <section class="auth-card">
+      <h1>Create your account</h1>
+      <p class="auth-intro">Join us and build healthier digital habits.</p>
+      <form id="registration-form" novalidate>
+        <div class="auth-field"><label for="full-name">Full name</label><input id="full-name" name="fullName" autocomplete="name" required><small class="field-error" id="full-name-error"></small></div>
+        <div class="auth-field"><label for="reg-email">Email</label><input id="reg-email" name="email" type="email" autocomplete="email" required><small class="field-error" id="reg-email-error"></small></div>
+        <div class="auth-field"><label for="birthday">Birthday</label><input id="birthday" name="birthday" type="date" autocomplete="bday" required><small class="field-error" id="birthday-error"></small></div>
+        <div class="auth-field"><label for="reg-password">Password</label><input id="reg-password" name="password" type="password" autocomplete="new-password" required><small class="field-error" id="reg-password-error"></small></div>
+        <div class="auth-field"><label for="confirm-password">Confirm password</label><input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required><small class="field-error" id="confirm-password-error"></small></div>
+        <div class="auth-field"><label for="daily-goal">Daily screen-time goal</label><select id="daily-goal" name="dailyGoal" required><option value="">Choose a goal</option><option value="Under 2 hours">Under 2 hours</option><option value="2–4 hours">2–4 hours</option><option value="4–6 hours">4–6 hours</option><option value="More than 6 hours">More than 6 hours</option></select><small class="field-error" id="daily-goal-error"></small></div>
+        <div class="auth-field"><label class="consent-row" for="consent"><input id="consent" name="consent" type="checkbox" required><span>I agree to the terms and privacy notice.</span></label><small class="field-error" id="consent-error"></small></div>
+        <button class="auth-submit" type="submit">Create account</button>
+        <div id="registration-message" class="auth-message" role="status" aria-live="polite"></div>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+  <footer class="auth-footer">Digital Well-being &amp; Mental Health</footer>
+</body>
+</html>
